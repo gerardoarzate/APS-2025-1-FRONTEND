@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('reset.css');
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --primario: #355F88;
+    --primario-hover: #25394d;
+    --fondo-claro: #f8fafc;
+    --fondo-form: #f4f0f0;
+    --gris: #d9d9d9;
+    --gris-margen: #e2e8f0;
+    --gris-texto: #64748b;
+    --negro-texto: #1E1E1E;
+    --verde: #409b3d;
+    --rojo: #a31416;
+}
+
+html, body {
+    height: 100%;
+    font-family: Inter, Arial, sans-serif;
+    color: var(--negro-texto);
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    background-color: var(--primario);
+    width: 260px;
+    padding: 16px;
+}
+
+.contenido {
+    overflow: hidden;
+    flex: 1;
+    background-color: var(--fondo-claro);
+}
