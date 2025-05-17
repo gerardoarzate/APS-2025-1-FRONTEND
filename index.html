@@ -3,16 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de sesión</title>
+    <title>Nueva página</title>
 
     <!-- Importar estilos -->
-    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="global.css">
 </head>
 <body>
 
+    <aside class="sidebar"></aside>
+
+    <main class="contenido">
+        <div class="container">
+            <div class="login-box">
+                <h2>LOGO</h2>
+                <form>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" placeholder="Correo electrónico" required />
+
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="••••" required />
+
+                    <button type="submit">Ingresar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
     <!-- Importar código -->
-    <script src="js/comprobarSesion.js"></script>
-    <script src="js/fetchApi.js"></script>
-    <script src="js/login.js"></script>
+    <script src="../js/comprobarSesion.js"></script>
+    <script src="../js/fetchApi.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/sidebar.js"></script>
 </body>
 </html>
