@@ -54,6 +54,6 @@
   }
 
   .sidebar {
-    display: none; /* Puedes hacer un toggle en JS si deseas */
+    display: none; 
   }
 }
