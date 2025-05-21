@@ -1,1 +1,59 @@
-/* Hoja de estilos para categorias.html */
+.sidebar {
+  width: 220px;
+  background-color: var(--primary);
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.sidebar nav a {
+  display: block;
+  margin: 10px 0;
+  color: white;
+  text-decoration: none;
+}
+
+.contenido {
+  padding: 40px;
+  flex-grow: 1;
+  background-color: var(--background);
+}
+
+.card-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.category-card {
+  width: 120px;
+  height: 120px;
+  background-color: var(--accent);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-card img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar {
+    display: none; /* Puedes hacer un toggle en JS si deseas */
+  }
+}
