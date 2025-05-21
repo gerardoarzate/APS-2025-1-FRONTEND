@@ -60,7 +60,7 @@ body {
 }
 
 .sidebar__lateral__contenedorLogo__logo {
-    width: 56px;
+    width: 120px;
     height: auto;
 }
 
@@ -107,7 +107,7 @@ body {
 }
 
 .sidebar__movil__logo {
-    height: 20px;
+    height: 40px;
     width: auto;
 }
 
