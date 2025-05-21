@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorías</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorías</title>
 
-    <!-- Importar estilos -->
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/categorias.css">
+  <!-- Importar estilos -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/categorias.css">
 </head>
 <body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>LOGO</h2>
+    <nav>
+      <a href="#">📝 Registro del producto</a>
+      <a href="#">📦 Historial de envíos</a>
+      <a href="#">📋 Cotización</a>
+      <a href="#">🔓 Cerrar sesión</a>
+    </nav>
+  </aside>
 
-    <aside class="sidebar"></aside>
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <h1>Registro del Producto</h1>
+    <div class="card-container">
+      <a href="registrar-producto.html?categoria=alimentos" class="category-card">
+        <img src="../assets/icono-alimentos.svg" alt="Alimentos">
+        <span>Alimentos</span>
+      </a>
+      <a href="registrar-producto.html?categoria=electronicos" class="category-card">
+        <img src="../assets/icono-electronicos.svg" alt="Electrónicos">
+        <span>Electrónicos</span>
+      </a>
+      <a href="registrar-producto.html?categoria=vehiculos" class="category-card">
+        <img src="../assets/icono-vehiculos.svg" alt="Vehículos">
+        <span>Vehículos</span>
+      </a>
+    </div>
+  </main>
 
-    <main class="contenido">
-        <p>El contenido de la página va aquí</p>
-    </main>
-
-    <!-- Importar código -->
-    <script src="../js/comprobarSesion.js"></script>
-    <script src="../js/fetchApi.js"></script>
-    <script src="../js/logout.js"></script>
-    <script src="../js/sidebar.js"></script>
+  <!-- Importar código JS -->
+  <script src="../js/comprobarSesion.js"></script>
+  <script src="../js/fetchApi.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/sidebar.js"></script>
 </body>
 </html>
