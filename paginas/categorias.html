@@ -13,12 +13,29 @@
 
     <aside class="sidebar"></aside>
 
-    <main class="contenido">
-        <p>El contenido de la página va aquí</p>
-    </main>
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <h1>Registro del Producto</h1>
+    <div class="card-container">
+      <a href="registrar-producto.html?categoria=alimentos" class="category-card">
+        <img src="/assets/alimentos.png" alt="Alimentos">
+        <span>Alimentos</span>
+      </a>
+
+      <a href="registrar-producto.html?categoria=electronicos" class="category-card">
+        <img src="/assets/electronicos.png" alt="Electrónicos">
+        <span>Electrónicos</span>
+      </a>
+
+      <a href="registrar-producto.html?categoria=vehiculos" class="category-card">
+        <img src="/assets/vehiculos.png" alt="Vehículos">
+        <span>Vehículos</span>
+      </a>
+    </div>
+  </main>
 
     <!-- Importar código -->
-    <script src="../js/comprobarSesion.js"></script>
+    <!-- <script src="../js/comprobarSesion.js"></script> -->
     <script src="../js/fetchApi.js"></script>
     <script src="../js/logout.js"></script>
     <script src="../js/sidebar.js"></script>
