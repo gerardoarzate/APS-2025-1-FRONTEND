@@ -8,53 +8,13 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 220px;
-  background-color: var(--primary);
-  color: white;
-  min-height: 100vh;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: left 0.3s ease;
-}
-
-.sidebar-logo {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.sidebar nav a {
-  display: block;
-  margin: 10px 0;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-}
-
 /* Contenido principal */
 .contenido {
   padding: 40px;
-  flex-grow: 1;
-  background-color: var(--background);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
 }
 
 .contenido h1 {
@@ -154,12 +114,6 @@ body {
 
 /* Responsivo: Laptops pequeños */
 @media screen and (max-width: 900px) and (min-width: 601px) {
-  .sidebar {
-    width: 140px;
-    padding: 10px 4px;
-    font-size: 13px;
-  }
-
   .category-card {
     width: 38vw;
     max-width: 220px;
@@ -171,36 +125,8 @@ body {
 
 /* Responsivo: Tablets y celulares horizontales */
 @media screen and (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
-
   .menu-btn {
     display: block;
-  }
-
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 220px;
-    height: 100vh;
-    background-color: var(--primary);
-    padding: 20px;
-    transition: left 0.3s ease;
-    z-index: 1050;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  .sidebar.open {
-    left: 0;
-  }
-
-  .sidebar nav a {
-    margin: 12px 0;
-    font-size: 16px;
   }
 
   .contenido {
