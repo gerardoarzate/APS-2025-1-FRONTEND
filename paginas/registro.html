@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías</title>
+
+    <!-- Importar estilos -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/registro.css">
+</head>
+<body>
+
+    <aside class="sidebar"></aside>
+
+    <main class="contenido">
+        <h1 style="text-align: center;">Registro del Producto</h1>
+
+        <!-- Paso 1 -->
+        <section class="card" id="step-1">
+          <h2>Datos del Cliente</h2>
+          <div class="form-group">
+            <input type="text" placeholder="Nombre del cliente" required />
+            <input type="text" placeholder="Teléfono" required />
+            <input type="email" placeholder="Correo" required style="flex: 1 1 100%;" />
+          </div>
+          <div class="buttons">
+            <span></span>
+            <button class="next">Continuar</button>
+          </div>
+        </section>
+    
+        <!-- Paso 2 -->
+        <section class="card hidden" id="step-2">
+          <h2>Datos del Producto</h2>
+          <div class="form-group">
+            <input type="text" placeholder="Nombre del producto" required />
+            <select id="categoriaInput" required>
+                <option value="">Seleccionar categoría</option>
+                <option value="Alimentos">Alimentos</option>
+                <option value="Electrónicos">Electrónicos</option>
+                <option value="Vehículos">Vehículos</option>
+              </select>            <input type="number" placeholder="Peso (kg)" required />
+            <input type="number" placeholder="Altura (cm)" required />
+            <input type="number" placeholder="Ancho (cm)" required />
+          </div>
+          <div class="buttons">
+            <button class="prev">Regresar</button>
+            <button class="next">Continuar</button>
+          </div>
+        </section>
+    
+        <!-- Paso 3 -->
+        <section class="card hidden" id="step-3">
+          <h2>Datos del Envío</h2>
+          <div class="form-group">
+            <select required>
+              <option value="">Lugar de Envío</option>
+              <option>Estados Unidos</option>
+              <option>Canadá</option>
+              <option>China</option>
+              <option>Alemania</option>
+              <option>Brasil</option>
+              <option>Japón</option>
+              <option>Corea del Sur</option>
+              <option>Guatemala</option>
+              <option>Reino Unido</option>
+              <option>Colombia</option>
+              <option>España</option>
+              <option>Francia</option>
+              <option>Italia</option>
+            </select>
+            <select required>
+              <option value="">Lugar de Destino</option>
+              <option>Estados Unidos</option>
+              <option>Canadá</option>
+              <option>China</option>
+              <option>Alemania</option>
+              <option>Brasil</option>
+              <option>Japón</option>
+              <option>Corea del Sur</option>
+              <option>Guatemala</option>
+              <option>Reino Unido</option>
+              <option>Colombia</option>
+              <option>España</option>
+              <option>Francia</option>
+              <option>Italia</option>
+            </select>
+            <select required style="flex: 1 1 100%;">
+              <option value="">Medio de Transporte</option>
+              <option value="Maritimo">Maritimo</option>
+              <option value="Aéreo">Aéreo</option>
+              <option value="Terrestre">Terrestre</option>
+            </select>
+          </div>
+          <div class="buttons">
+            <button class="prev">Regresar</button>
+            <button class="next">Continuar</button>
+          </div>
+        </section>
+    <!-- CÓDIGO COMPLETO OMITIDO (MISMO QUE ANTERIOR HASTA EL PASO 4)... -->
+    
+    <section class="card hidden" id="step-4">
+        <h2>Confirmar Datos</h2>
+        <div class="form-group" style="flex-direction: column;">
+          <div class="envio-detalles" id="resumenDatos">
+            <div class="envio-grid">
+              <div>
+                <p><strong>Lugar de Envío:</strong></p>
+                <p id="datoEnvio"></p>
+              </div>
+              <div>
+                <p><strong>Lugar de Destino:</strong></p>
+                <p id="datoDestino"></p>
+              </div>
+              <div>
+                <p><strong>Medio de Transporte:</strong></p>
+                <p id="datoMedio"></p>
+              </div>
+              <div>
+                <p><strong>Costo:</strong></p>
+                <p id="costoEnvio"></p>
+              </div>
+              <div>
+                <p><strong>Fecha de Envío:</strong></p>
+                <p id="fechaEnvio"></p>
+              </div>
+              <div>
+                <p><strong>Hora de Envío:</strong></p>
+                <p id="horaEnvio"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="prev">Regresar</button>
+          <button class="pdf">Confirmar y descargar PDF</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Importar código -->
+    <script src="../js/comprobarSesion.js"></script>
+    <script src="../js/fetchApi.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/registro.js"></script>
+</body>
+</html>
