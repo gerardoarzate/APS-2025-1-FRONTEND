@@ -110,10 +110,83 @@ document.querySelectorAll(".prev").forEach(btn => {
   });
 });
 
-document.querySelector(".pdf").addEventListener("click", () => {
-  alert("Simulando envío de datos y descarga de PDF...");
-  // Aquí se haría la llamada real a la API en producción
+document.querySelector(".pdf").addEventListener("click", async () => {
+  try {
+    // Recopilar datos del formulario
+    const datosProducto = {
+      nombre: steps[1].querySelector('input[placeholder="Nombre del producto"]').value,
+      peso: parseFloat(steps[1].querySelector('input[placeholder="Peso (kg)"]').value),
+      altura: parseInt(steps[1].querySelector('input[placeholder="Altura (cm)"]').value),
+      ancho: parseInt(steps[1].querySelector('input[placeholder="Ancho (cm)"]').value),
+      id_categoria: getCategoriaId(steps[1].querySelector('#categoriaInput').value),
+      pais_origen: getPaisId(steps[2].querySelector('select:nth-of-type(1)').value),
+      pais_destino: getPaisId(steps[2].querySelector('select:nth-of-type(2)').value),
+      id_medio_transporte: getMedioTransporteId(steps[2].querySelector('select:nth-of-type(3)').value)
+    };
+
+    console.log('Enviando datos:', datosProducto);
+
+    // Enviar datos al backend
+    const response = await fetch('http://localhost:777/api/productos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(datosProducto)
+    });
+
+    if (response.ok) {
+      const resultado = await response.json();
+      alert("Producto registrado exitosamente");
+      console.log('Respuesta del servidor:', resultado);
+      // Aquí puedes agregar lógica para descargar PDF si el backend lo proporciona
+    } else {
+      throw new Error(`Error del servidor: ${response.status}`);
+    }
+
+  } catch (error) {
+    console.error('Error al enviar datos:', error);
+    alert("Error al registrar el producto. Por favor intente nuevamente.");
+  }
 });
+
+// Funciones auxiliares para convertir valores a IDs
+function getCategoriaId(categoria) {
+  const categorias = {
+    'Alimentos': 1,
+    'Electrónicos': 2,
+    'Vehículos': 3
+  };
+  return categorias[categoria] || 1;
+}
+
+function getMedioTransporteId(medio) {
+  const medios = {
+    'Aéreo': 1,
+    'Terrestre': 2,
+    'Maritimo': 3
+  };
+  return medios[medio] || 1;
+}
+
+function getPaisId(pais) {
+  const paises = {
+    'Estados Unidos': 1,
+    'Canadá': 2,
+    'China': 3,
+    'Alemania': 4,
+    'Brasil': 5,
+    'Japón': 6,
+    'Corea del Sur': 7,
+    'Guatemala': 8,
+    'Reino Unido': 9,
+    'Colombia': 10,
+    'España': 11,
+    'Francia': 12,
+    'Italia': 13
+  };
+  return paises[pais] || 1;
+}
 
 window.addEventListener("DOMContentLoaded", () => {
   showStep(currentStep);
