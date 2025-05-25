@@ -172,18 +172,19 @@ function getMedioTransporteId(medio) {
 function getPaisId(pais) {
   const paises = {
     'Estados Unidos': 1,
-    'Canadá': 2,
-    'China': 3,
+    'China': 2,
+    'Canadá': 3,
     'Alemania': 4,
-    'Brasil': 5,
-    'Japón': 6,
-    'Corea del Sur': 7,
+    'Japón': 5,
+    'Corea del Sur': 6,
+    'Brasil': 7,
     'Guatemala': 8,
     'Reino Unido': 9,
     'Colombia': 10,
     'España': 11,
     'Francia': 12,
-    'Italia': 13
+    'Italia': 13,
+    'México': 14
   };
   return paises[pais] || 1;
 }
