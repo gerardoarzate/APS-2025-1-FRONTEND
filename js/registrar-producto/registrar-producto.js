@@ -69,20 +69,7 @@ function mostrarResumen() {
   document.getElementById("horaEnvio").textContent = hora;
 
   // Costo variable según el medio de transporte
-  let costoEnvio = 0;
-  switch(medioTransporte) {
-    case "Aéreo":
-      costoEnvio = 500;
-      break;
-    case "Maritimo":
-      costoEnvio = 200;
-      break;
-    case "Terrestre":
-      costoEnvio = 300;
-      break;
-    default:
-      costoEnvio = 250; // Costo por defecto
-  }
+  let costoEnvio = getCosto(medioTransporte);
   
   document.getElementById("costoEnvio").textContent = `${costoEnvio}`;
 }
@@ -111,6 +98,12 @@ document.querySelectorAll(".prev").forEach(btn => {
 });
 
 document.querySelector(".pdf").addEventListener("click", async () => {
+  const ahora = new Date();
+  const medioTransporte = steps[2].querySelector('select:nth-of-type(3)').value;
+  const nombreCliente = steps[0].querySelector('input:nth-of-type(1)').value;
+  const telefono = steps[0].querySelector('input:nth-of-type(2)').value;
+  const correo = steps[0].querySelector('input:nth-of-type(3)').value;
+
   try {
     // Recopilar datos del formulario
     const datosProducto = {
@@ -121,7 +114,13 @@ document.querySelector(".pdf").addEventListener("click", async () => {
       id_categoria: getCategoriaId(steps[1].querySelector('#categoriaInput').value),
       pais_origen: getPaisId(steps[2].querySelector('select:nth-of-type(1)').value),
       pais_destino: getPaisId(steps[2].querySelector('select:nth-of-type(2)').value),
-      id_medio_transporte: getMedioTransporteId(steps[2].querySelector('select:nth-of-type(3)').value)
+      id_medio_transporte: getMedioTransporteId(medioTransporte),
+      fecha: ahora.toLocaleDateString().split('/').reverse().join('-'),
+      hora: ahora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      costo: getCosto(medioTransporte),
+      nombre_cliente: nombreCliente,
+      telefono: telefono,
+      correo: correo
     };
 
     console.log('Enviando datos:', datosProducto);
@@ -137,8 +136,9 @@ document.querySelector(".pdf").addEventListener("click", async () => {
 
     if (response.ok) {
       const resultado = await response.json();
-      alert("Producto registrado exitosamente");
+      alert(`Producto registrado exitosamente.\nFolio: ${resultado?.result.transactionId}`);
       console.log('Respuesta del servidor:', resultado);
+      location.assign('/paginas/categorias.html');
       // Aquí puedes agregar lógica para descargar PDF si el backend lo proporciona
     } else {
       throw new Error(`Error del servidor: ${response.status}`);
@@ -187,6 +187,19 @@ function getPaisId(pais) {
     'México': 14
   };
   return paises[pais] || 1;
+}
+
+function getCosto(medioTransporte) {
+  switch(medioTransporte) {
+  case "Aéreo":
+    return 500;
+  case "Maritimo":
+    return 200;
+  case "Terrestre":
+    return 300;
+  default:
+    return 250; // Costo por defecto
+  }
 }
 
 window.addEventListener("DOMContentLoaded", () => {
