@@ -136,10 +136,30 @@ document.querySelector(".pdf").addEventListener("click", async () => {
 
     if (response.ok) {
       const resultado = await response.json();
-      alert(`Producto registrado exitosamente.\nFolio: ${resultado?.result.transactionId}`);
+      const folio = resultado?.result?.transactionId;
+      alert(`Producto registrado exitosamente.\nFolio: ${folio}`);
       console.log('Respuesta del servidor:', resultado);
+
+      const datosPDF = {
+        nombre: datosProducto.nombre,
+        peso: datosProducto.peso,
+        altura: datosProducto.altura,
+        ancho: datosProducto.ancho,
+        categoria: steps[1].querySelector('#categoriaInput').value,
+        pais_origen: steps[2].querySelector('select:nth-of-type(1)').selectedOptions[0].text,
+        pais_destino: steps[2].querySelector('select:nth-of-type(2)').selectedOptions[0].text,
+        medio_transporte: medioTransporte,
+        fecha: datosProducto.fecha,
+        hora: datosProducto.hora,
+        costo: datosProducto.costo,
+        nombre_cliente: nombreCliente,
+        telefono: telefono,
+        correo: correo,
+        folio: folio
+      };
+
+      generarPDF(datosPDF);
       location.assign('/paginas/categorias.html');
-      // Aquí puedes agregar lógica para descargar PDF si el backend lo proporciona
     } else {
       throw new Error(`Error del servidor: ${response.status}`);
     }
