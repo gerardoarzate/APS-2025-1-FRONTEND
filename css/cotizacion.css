@@ -5,53 +5,10 @@ body {
   background-color: #f8f8f8;
 }
 
-.sidebar {
-  width: 220px;
-  background-color: #2e5077;
-  color: white;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.sidebar .logo {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.sidebar nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar nav ul li {
-  margin: 15px 0;
-}
-
-.sidebar nav ul li.active,
-.sidebar nav ul li:hover {
-  background-color: #1c3b5b;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.sidebar a {
-  color: white;
-  text-decoration: none;
-}
-
-.logout {
-  margin-top: auto;
-  text-align: center;
-}
-
 .contenido {
   flex-grow: 1;
   padding: 40px;
+  overflow: auto;
 }
 
 .card {
@@ -72,7 +29,7 @@ body {
 
 .form-group .col {
   flex: 1;
-  min-width: 300px;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
   gap: 10px;
