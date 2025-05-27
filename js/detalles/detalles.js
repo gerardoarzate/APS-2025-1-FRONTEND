@@ -58,10 +58,5 @@ document.getElementById("Regresar").addEventListener("click", () => {
 
 // Botón "Rastrear Envío"
 document.getElementById("Rastreo").addEventListener("click", () => {
-  const nuevaVentana = window.open(`rastreo.html?folio=${folio}`, "_blank");
-  if (nuevaVentana) {
-    nuevaVentana.focus();
-  } else {
-    alert("No se pudo abrir la ventana de rastreo.");
-  }
+  window.location.href = `rastreo.html?folio=${folio}`;
 });
