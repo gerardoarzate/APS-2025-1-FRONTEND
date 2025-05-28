@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calcular Costo del Envío</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/cotizacion.css" />
+  <style>
+    .titulo-envio {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0 0 20px 0;
+      color: #2e2e2e;
+    }
+
+    .card {
+      background: #f1eded;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .form-group .col {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      background-color: #2e5077;
+      color: white;
+      border: none;
+      padding: 10px 30px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #costo {
+      background-color: #f9f9f9;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra lateral (no se modifica) -->
+  <aside class="sidebar"></aside>
+
+  <main class="contenido">
+    <h1 class="titulo-envio">Calcular Costo del Envío</h1>
+    <section class="card">
+      <h2 style="text-align: center;">Costo del Envío</h2>
+      <div class="form-group">
+        <div class="col">
+          <label for="tipo">Tipo del Producto:</label>
+          <select id="tipo">
+            <option>Seleccione una opción...</option>
+            <option>Alimentos</option>
+            <option>Electrónicos</option>
+            <option>Vehículos</option>
+          </select>
+
+          <label for="ancho">Ancho (cm):</label>
+          <input type="number" id="ancho" placeholder="Ancho del producto" />
+
+          <label for="origen">Lugar de Envío:</label>
+          <select id="origen">
+            <option>Seleccione una opción...</option>
+            <option>México</option>
+            <option>Estados Unidos</option>
+            <option>Canadá</option>
+            <option>China</option>
+            <option>Alemania</option>
+            <option>Brasil</option>
+            <option>Japón</option>
+            <option>Corea del Sur</option>
+            <option>Guatemala</option>
+            <option>Reino Unido</option>
+            <option>Colombia</option>
+            <option>España</option>
+            <option>Francia</option>
+            <option>Italia</option>
+          </select>
+
+          <label for="transporte">Medio de Transporte:</label>
+          <select id="transporte">
+            <option>Seleccione una opción...</option>
+            <option value="Aéreo">Transporte aéreo</option>
+            <option value="Maritimo">Transporte marítimo</option>
+            <option value="Terrestre">Transporte terrestre</option>
+          </select>
+        </div>
+
+        <div class="col">
+          <label for="peso">Peso (kg):</label>
+          <input type="number" id="peso" placeholder="Peso" />
+
+          <label for="altura">Altura (cm):</label>
+          <input type="number" id="altura" placeholder="Altura del producto" />
+
+          <label for="destino">Lugar de Destino:</label>
+          <select id="destino">
+            <option>Seleccione una opción...</option>
+            <option>México</option>
+            <option>Estados Unidos</option>
+            <option>Canadá</option>
+            <option>China</option>
+            <option>Alemania</option>
+            <option>Brasil</option>
+            <option>Japón</option>
+            <option>Corea del Sur</option>
+            <option>Guatemala</option>
+            <option>Reino Unido</option>
+            <option>Colombia</option>
+            <option>España</option>
+            <option>Francia</option>
+            <option>Italia</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Campo de Costo -->
+      <div class="form-group">
+        <div class="col"></div>
+        <div class="col">
+          <label for="costo">Costo:</label>
+          <input type="text" id="costo" readonly placeholder="$0" />
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="btn" onclick="calcularCosto()">Calcular Costo</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Script funcional -->
+  <script>
+    function getCosto(medioTransporte) {
+      switch (medioTransporte) {
+        case "Aéreo":
+        case "Transporte aéreo":
+          return 500;
+        case "Maritimo":
+        case "Transporte marítimo":
+          return 200;
+        case "Terrestre":
+        case "Transporte terrestre":
+          return 300;
+        default:
+          return 250;
+      }
+    }
+
+    function calcularCosto() {
+      const transporte = document.getElementById("transporte").value;
+      const campoCosto = document.getElementById("costo");
+
+      if (transporte === "Seleccione una opción..." || transporte === "") {
+        campoCosto.value = "Seleccione transporte";
+      } else {
+        const costoFinal = getCosto(transporte);
+        campoCosto.value = `$${costoFinal}`;
+      }
+    }
+  </script>
+
+  <script src="../js/comprobarSesion.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/sidebar.js"></script>
+</body>
+</html>

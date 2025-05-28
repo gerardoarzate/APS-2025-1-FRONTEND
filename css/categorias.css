@@ -1,1 +1,195 @@
-/* Hoja de estilos para categorias.html */
+:root {
+  --primary: #2a3d66;
+  --accent: #4e73df;
+  --background: #f4f6fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Contenido principal */
+.contenido {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido h1 {
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+/* Tarjetas */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 24px rgba(46, 61, 73, 0.08);
+}
+
+.category-card {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, var(--accent) 80%, var(--primary) 100%);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--primary);
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  filter: brightness(0.85);
+}
+
+.category-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 4px rgba(46, 61, 73, 0.10));
+}
+
+.category-card span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* Botón de menú móvil */
+.menu-btn {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 16px;
+  z-index: 1100;
+  font-size: 24px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.menu-btn:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Responsivo: Tablets */
+@media screen and (max-width: 1024px) {
+  .contenido {
+    padding: 16px;
+  }
+
+  .card-container {
+    gap: 24px;
+    padding: 20px 8px;
+  }
+
+  .category-card {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Responsivo: Laptops pequeños */
+@media screen and (max-width: 900px) and (min-width: 601px) {
+  .category-card {
+    width: 38vw;
+    max-width: 220px;
+    min-width: 140px;
+    height: 120px;
+    margin: 0 8px 24px 8px;
+  }
+}
+
+/* Responsivo: Tablets y celulares horizontales */
+@media screen and (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .contenido {
+    padding-top: 70px;
+    padding-left: 16px;
+    padding-right: 16px;
+    align-items: stretch;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    padding: 16px 0;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .category-card {
+    width: 90vw;
+    max-width: 340px;
+    min-width: 180px;
+    height: 110px;
+  }
+
+  .category-card img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .category-card span {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsivo: teléfonos muy pequeños */
+@media screen and (max-width: 480px) {
+  .contenido {
+    padding: 6vw 2vw;
+  }
+
+  .category-card {
+    width: 98vw;
+    max-width: 99vw;
+    min-width: 140px;
+    height: 90px;
+  }
+
+  .category-card img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .category-card span {
+    font-size: 1rem;
+  }
+}
+
+/* Responsivo: pantallas grandes */
+@media screen and (min-width: 1400px) {
+  .card-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+

@@ -37,7 +37,7 @@ Dentro de `/js` se encuentran algunos scripts de uso general que ya han sido inc
 Este script revisa si el usuario cuenta con una sesión activa y redirige al usuario en caso de ser necesario.
 
 `fetchApi.js`<br>
-Este script declara la función fetchApi. Esta función utiliza fetch para hacer una petición HTTP a la API, simplificando el proceso ya que incluye automáticamente el token de autorización y requiere solo pasar como argumento el endpoint de la API, sin incluir el hostname.
+Este script declara la función fetchApi. Esta función utiliza fetch para hacer una petición HTTP a la API, simplificando el proceso ya que incluye automáticamente el token de autorización y requiere solo pasar como argumento el endpoint de la API, sin incluir el hostname ni "/api/".
 
 `login.js`<br>
 Recibe el token de autorización como argumento, lo almacena en localStorage y redirecciona al usuario.

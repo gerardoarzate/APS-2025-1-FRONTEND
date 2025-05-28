@@ -6,16 +6,14 @@
     <title>Nueva página</title>
 
     <!-- Importar estilos -->
-    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-
-    <aside class="sidebar"></aside>
 
     <main class="contenido">
         <div class="container">
             <div class="login-box">
-                <h2>LOGO</h2>
+                <img class="logo" src="assets/logo-dark.png">
                 <form>
                     <label for="email">Correo electrónico</label>
                     <input type="email" id="email" placeholder="Correo electrónico" required />
@@ -23,16 +21,16 @@
                     <label for="password">Contraseña</label>
                     <input type="password" id="password" placeholder="••••" required />
 
-                    <button type="submit">Ingresar</button>
+                    <button id="btnLogin" type="button">Ingresar</button>
                 </form>
             </div>
         </div>
     </main>
 
     <!-- Importar código -->
-    <script src="../js/comprobarSesion.js"></script>
-    <script src="../js/fetchApi.js"></script>
-    <script src="../js/logout.js"></script>
-    <script src="../js/sidebar.js"></script>
+    <script src="js/comprobarSesion.js"></script>
+    <script src="js/fetchApi.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/index/main.js"></script>
 </body>
 </html>
