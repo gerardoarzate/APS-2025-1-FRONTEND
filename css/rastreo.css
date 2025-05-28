@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #2f5070;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.logo {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: white;
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+nav a.active {
+  background: #1d3557;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.logout {
+  margin-top: auto;
+  color: white;
+  text-decoration: none;
+  padding-top: 20px;
+}
+
+main.content {
+  flex: 1;
+  padding: 40px;
+}
+
+.status-card {
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  width: 300px;
+  margin: 10px 0 20px;
+  border-radius: 5px;
+  background: white;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.status.pendiente {
+  color: red;
+}
+
+.status.enviado {
+  color: #007bff;
+}
+
+.status.entregado {
+  color: green;
+}
+
+.timeline {
+  border-left: 3px solid #ccc;
+  margin-top: 20px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.item .time {
+  font-size: 12px;
+  position: absolute;
+  left: -70px;
+  top: -5px;
+  text-align: right;
+  width: 60px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.completed .circle {
+  background-color: #ccc;
+}
+
+.current .circle.active {
+  background-color: #1d3557;
+}
+
+.instruccion {
+  font-size: 14px;
+  color: #666;
+}

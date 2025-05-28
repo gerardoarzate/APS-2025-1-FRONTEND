@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rastreo del Envío</title>
+  <link rel="stylesheet" href="../css/rastreo.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">LOGO</div>
+    <nav>
+      <a href="#">📦 Registro del producto</a>
+      <a class="active" href="#">📜 Historial de envíos</a>
+      <a href="#">💰 Cotización</a>
+    </nav>
+    <a class="logout" href="#">↩️ Cerrar sesión</a>
+  </div>
+
+  <main class="content">
+    <h1>Rastreo del Envío</h1>
+    <p>Folio: <strong>123456789</strong><br>
+    Última actualización del paquete</p>
+
+    <div class="status-card">
+      <p>Estatus: <span class="status entregado">Entregado</span></p>
+      <p>12 May 2025 &nbsp; 19:00</p>
+    </div>
+
+    <p class="instruccion">Haz clic en los círculos para actualizar el estado del paquete.</p>
+
+    <div class="timeline">
+      <div class="item completed">
+        <span class="time">May 12<br>11:28</span>
+        <div class="circle"></div>
+        <p>Pedido registrado.</p>
+      </div>
+      <div class="item completed">
+        <span class="time">May 12<br>14:28</span>
+        <div class="circle"></div>
+        <p>Paquete ha sido enviado.</p>
+      </div>
+      <div class="item completed">
+        <span class="time">May 12<br>16:48</span>
+        <div class="circle"></div>
+        <p>Aduana completada.</p>
+      </div>
+      <div class="item completed current">
+        <span class="time">May 12<br>19:00</span>
+        <div class="circle active"></div>
+        <p>Paquete entregado.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
