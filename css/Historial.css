@@ -1,0 +1,222 @@
+/* Reset y configuración general */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #2e5077;
+  width: 250px;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 20px;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sidebar .logo img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.sidebar .logo h1 {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Navegación */
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+  text-decoration: underline;
+  transform: translateX(5px);
+}
+
+.sidebar nav ul li.active a {
+  font-weight: bold;
+  color: #d1ecff;
+}
+
+/* Cerrar sesión */
+.logout {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  gap: 10px;
+  margin-top: 40px;
+  transition: 0.3s;
+}
+
+.logout:hover {
+  text-decoration: underline;
+  transform: translateX(5px);
+}
+
+/* Íconos opcionales (con Font Awesome) */
+.sidebar i {
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    display: none;
+  }
+
+}
+
+
+/* Tabla estilo moderno */
+.table-container {
+  overflow-x: auto;
+  margin-top: 30px;
+  background-color: white;
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 15px;
+  color: #333;
+}
+
+thead {
+  background-color: #f5f8fa;
+}
+
+th {
+  text-align: left;
+  padding: 14px 20px;
+  color: #5f6368;
+  font-weight: 600;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Alternar color en filas */
+tbody tr:nth-child(even) {
+  background-color: #fbfbfb;
+}
+
+/* Hover */
+tbody tr:hover {
+  background-color: #f1f5ff;
+}
+
+/* Estados de envío */
+td.pendiente {
+  color: #d9534f; /* rojo */
+  font-weight: 600;
+}
+
+td.entregado {
+  color: #28a745; /* verde */
+  font-weight: 600;
+}
+
+td.enviado {
+  color: #007bff; /* azul */
+  font-weight: 600;
+}
+
+/* Enlace Detalles */
+td a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+/* Flecha de ordenamiento */
+th span#flecha {
+  font-size: 12px;
+  margin-left: 4px;
+  color: #888;
+}
+
+/* Centra el contenido principal */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+/* Título centrado */
+.titulo-envio {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2e2e2e;
+  text-align: center;
+}
+
+/* Card que contiene la tabla */
+.card {
+  max-width: 1000px;
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
