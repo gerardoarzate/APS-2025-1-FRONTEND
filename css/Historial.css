@@ -12,87 +12,6 @@ body {
   background-color: #f8f9fa;
 }
 
-/* Sidebar */
-.sidebar {
-  background-color: #2e5077;
-  width: 250px;
-  min-height: 100vh;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 30px 20px;
-  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Logo */
-.sidebar .logo {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.sidebar .logo img {
-  width: 80px;
-  margin-bottom: 10px;
-}
-
-.sidebar .logo h1 {
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-/* Navegación */
-.sidebar nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar nav ul li {
-  margin: 20px 0;
-}
-
-.sidebar nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: 0.3s;
-}
-
-.sidebar nav ul li a:hover {
-  text-decoration: underline;
-  transform: translateX(5px);
-}
-
-.sidebar nav ul li.active a {
-  font-weight: bold;
-  color: #d1ecff;
-}
-
-/* Cerrar sesión */
-.logout {
-  display: flex;
-  align-items: center;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  gap: 10px;
-  margin-top: 40px;
-  transition: 0.3s;
-}
-
-.logout:hover {
-  text-decoration: underline;
-  transform: translateX(5px);
-}
-
-/* Íconos opcionales (con Font Awesome) */
-.sidebar i {
-  font-size: 18px;
-}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -199,6 +118,7 @@ th span#flecha {
   align-items: center;
   padding: 40px 20px;
   background-color: #f8f9fa;
+  overflow: auto;
 }
 
 /* Título centrado */
