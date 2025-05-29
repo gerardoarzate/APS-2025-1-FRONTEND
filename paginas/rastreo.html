@@ -4,27 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rastreo del Envío</title>
+  <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/rastreo.css">
 </head>
 <body>
   <div class="sidebar">
-    <div class="logo">LOGO</div>
-    <nav>
-      <a href="#">📦 Registro del producto</a>
-      <a class="active" href="#">📜 Historial de envíos</a>
-      <a href="#">💰 Cotización</a>
-    </nav>
-    <a class="logout" href="#">↩️ Cerrar sesión</a>
   </div>
 
-  <main class="content">
+  <main class="contenido">
     <h1>Rastreo del Envío</h1>
-    <p>Folio: <strong>123456789</strong><br>
+    <p>Folio: <strong id="folio"></strong><br>
     Última actualización del paquete</p>
 
     <div class="status-card">
-      <p>Estatus: <span class="status entregado">Entregado</span></p>
-      <p>12 May 2025 &nbsp; 19:00</p>
+      <p>Estatus: <span class="status"></span></p>
+      <p><span id="fechaStatus"></span> &nbsp; <span id="horaStatus"></span></p>
     </div>
 
     <p class="instruccion">Haz clic en los círculos para actualizar el estado del paquete.</p>
@@ -53,6 +47,10 @@
     </div>
   </main>
 
-  <script src="script.js"></script>
+  <script src="../js/comprobarSesion.js"></script>
+  <script src="../js/fetchApi.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/rastreo/script.js"></script>
 </body>
 </html>
