@@ -134,7 +134,7 @@ body {
 }
 
 .contenido {
-    overflow: hidden;
+    overflow: auto;
     flex: 1;
     background-color: var(--fondo-claro);
 }
