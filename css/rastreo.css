@@ -1,48 +1,4 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f8f9fa;
-  color: #333;
-  display: flex;
-}
-
-.sidebar {
-  width: 220px;
-  background-color: #2f5070;
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-}
-
-.logo {
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-nav a {
-  color: white;
-  display: block;
-  padding: 10px 0;
-  text-decoration: none;
-}
-
-nav a.active {
-  background: #1d3557;
-  border-radius: 5px;
-  padding-left: 10px;
-}
-
-.logout {
-  margin-top: auto;
-  color: white;
-  text-decoration: none;
-  padding-top: 20px;
-}
-
-main.content {
+.contenido {
   flex: 1;
   padding: 40px;
 }
@@ -50,7 +6,7 @@ main.content {
 .status-card {
   border: 1px solid #ccc;
   padding: 10px 20px;
-  width: 300px;
+  max-width: 300px;
   margin: 10px 0 20px;
   border-radius: 5px;
   background: white;
@@ -85,12 +41,17 @@ main.content {
 }
 
 .item .time {
+  display: none;
   font-size: 12px;
   position: absolute;
   left: -70px;
   top: -5px;
   text-align: right;
   width: 60px;
+}
+
+.current .time {
+  display: block;
 }
 
 .circle {
@@ -113,4 +74,10 @@ main.content {
 .instruccion {
   font-size: 14px;
   color: #666;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 16px;
 }
